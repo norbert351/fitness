@@ -1,22 +1,20 @@
+"use client";
 
-'use client'
-
-import { deleteUser } from '@/app/users/action'
-import { useState } from 'react'
-
+import { deleteUser } from "@/app/users/action";
+import { useState } from "react";
 
 interface DeleteButtonProps {
-  userId: number
-  username: string
+  userId: number;
+  username: string;
 }
 
 export default function DeleteButton({ userId, username }: DeleteButtonProps) {
-  const [showDialog, setShowDialog] = useState(false)
+  const [showDialog, setShowDialog] = useState(false);
 
-    const handleDelete = async (formData: FormData) => {
-    await deleteUser(userId)
-    setShowDialog(false)
-  }
+  const handleDelete = async () => {
+    await deleteUser(userId);
+    setShowDialog(false);
+  };
 
   return (
     <>
@@ -34,7 +32,8 @@ export default function DeleteButton({ userId, username }: DeleteButtonProps) {
               Confirm Deletion
             </h3>
             <p className="text-gray-600 mb-6">
-              Are you sure you want to delete user <span className="font-semibold">{username}</span>?
+              Are you sure you want to delete user{" "}
+              <span className="font-semibold">{username}</span>?
             </p>
             <div className="flex justify-end space-x-4">
               <button
@@ -57,5 +56,5 @@ export default function DeleteButton({ userId, username }: DeleteButtonProps) {
         </div>
       )}
     </>
-  )
+  );
 }

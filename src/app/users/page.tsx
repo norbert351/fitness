@@ -1,5 +1,5 @@
+
 import { RegisterTable } from '@/db/schema'
-import Link from 'next/link'
 import { db } from '@/db'
 import UserTable from '@/component/UserTable'
 

@@ -1,15 +1,13 @@
-'use client'
+"use client";
 
-import { updateRole } from '@/app/users/action'
-import Link from 'next/link'
-import DeleteButton from './DeleteButton'
-
+import { updateRole } from "@/app/users/action";
+import DeleteButton from "./DeleteButton";
 
 interface User {
-  id: number
-  username: string
-  email: string
-  role: string
+  id: number;
+  username: string;
+  email: string;
+  role: string;
 }
 
 export default function UserTable({ users }: { users: User[] }) {
@@ -18,25 +16,41 @@ export default function UserTable({ users }: { users: User[] }) {
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-50">
           <tr>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Username</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              ID
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Username
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Email
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Role
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Actions
+            </th>
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {users.map((user) => (
             <tr key={user.id}>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.id}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {user.id}
+              </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 {user.username}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.email}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {user.email}
+              </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <form action={async (formData) => {
-                  await updateRole(user.id, formData.get('role') as string)
-                }}>
+                <form
+                  action={async (formData) => {
+                    await updateRole(user.id, formData.get("role") as string);
+                  }}
+                >
                   <input type="hidden" name="userId" value={user.id} />
                   <select
                     name="role"
@@ -47,7 +61,7 @@ export default function UserTable({ users }: { users: User[] }) {
                     <option value="editor">Editor</option>
                     <option value="admin">Admin</option>
                   </select>
-                  <button 
+                  <button
                     type="submit"
                     className="ml-2 text-sm text-blue-600 hover:text-blue-800"
                   >
@@ -62,12 +76,12 @@ export default function UserTable({ users }: { users: User[] }) {
                 >
                   Edit
                 </Link> */}
-                <DeleteButton userId={user.id} username={user.username}/>
+                <DeleteButton userId={user.id} username={user.username} />
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-  )
+  );
 }

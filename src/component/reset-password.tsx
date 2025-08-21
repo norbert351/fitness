@@ -80,7 +80,7 @@ export default function ResetPasswordPage() {
             className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-600"
             aria-label={showNewPassword ? "Hide password" : "Show password"}
           >
-            {showNewPassword ? <FaRegEye /> :  <PiEyeClosedBold />}
+            {showNewPassword ? <FaRegEye /> : <PiEyeClosedBold />}
           </button>
         </div>
 
@@ -99,7 +99,7 @@ export default function ResetPasswordPage() {
             className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-600"
             aria-label={showConfirmPassword ? "Hide password" : "Show password"}
           >
-            {showConfirmPassword ? <FaRegEye /> :  <PiEyeClosedBold />}
+            {showConfirmPassword ? <FaRegEye /> : <PiEyeClosedBold />}
           </button>
         </div>
 

@@ -111,7 +111,7 @@ const LoginPage = () => {
           </div>
 
           <div className="text-sm text-gray-500">
-            <span className="text-gray-500">Don't have an account? </span>
+            <span className="text-gray-500">Don&apos;t have an account? </span>
             <Link href="/register" className="text-teal-500 hover:underline">
               Register
             </Link>

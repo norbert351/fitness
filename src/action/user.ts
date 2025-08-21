@@ -37,7 +37,7 @@ export async function register(formData: FormData) {
 
     // Redirect on success
      // Better to redirect to login page after registration
-  } catch (error: any) {
+  }catch (error: any) {
     // Handle specific database errors
     if (error.code === 'ER_DUP_ENTRY' || error.message.includes('unique constraint')) {
       return { error: "Email already registered" };
@@ -45,4 +45,4 @@ export async function register(formData: FormData) {
     return { error: error.message || "Registration failed" };
   }
    redirect("/login");
-}
+} 

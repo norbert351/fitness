@@ -43,7 +43,7 @@ const  HeroSlider = () =>{
         ()=>setCurrentSlide((prev) => (prev ===slides.length -1 ? 0 : prev + 1)),
       6000);
       return () => clearInterval(interval);
-    },[])
+    },[slides.length])
 
      const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));

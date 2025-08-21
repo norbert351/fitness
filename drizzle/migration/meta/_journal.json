@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1747666368220,
+      "tag": "0000_noisy_manta",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1748467536759,
+      "tag": "0001_easy_terror",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1748513255089,
+      "tag": "0002_worthless_warpath",
+      "breakpoints": true
+    }
+  ]
+}
